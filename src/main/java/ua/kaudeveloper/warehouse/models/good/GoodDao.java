@@ -24,15 +24,15 @@ public class GoodDao {
     return goods;
   }
 
-  public boolean deleteById(int goodId) {
-    repository.deleteById(goodId);  
+  public boolean deleteById(Integer goodId) {
+    repository.deleteById(goodId);
     return repository.existsById(goodId);
   }  
   public void deleteAll() {
     repository.deleteAll();
   }
-  public Optional<Good> findById(int goodId){
-    return repository.findById(goodId);
+  public Optional<Good> findById(Integer goodId){
+    return repository.findById(goodId.intValue());
   }
   public Long count(){
     return repository.count();

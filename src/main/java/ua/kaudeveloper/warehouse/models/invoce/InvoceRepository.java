@@ -1,9 +1,9 @@
 package ua.kaudeveloper.warehouse.models.invoce;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InvoceRepository extends CrudRepository<Invoce, Integer> {
+public interface InvoceRepository extends JpaRepository<Invoce, Integer> {
 
 }
