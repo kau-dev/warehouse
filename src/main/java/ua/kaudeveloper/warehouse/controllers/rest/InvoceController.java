@@ -18,32 +18,32 @@ public class InvoceController {
     @Autowired
     private InvoceDao invoceDao;
 
-    @GetMapping("/invoce/get-all")
+    @GetMapping("/api/invoce/get-all")
     public List<Invoce> getAllInvoces() {
         return invoceDao.getAllInvoces();
     }
 
-    @PostMapping("/invoce/save")
+    @PostMapping("/api/invoce/save")
     public Invoce save(@RequestBody Invoce invoce) {
         return invoceDao.save(invoce);
     }
 
-    @GetMapping("/invoce/count")
+    @GetMapping("/api/invoce/count")
     public Long count() {
         return invoceDao.count();
     }
 
-    @PostMapping("/invoce/deleteById")
+    @PostMapping("/api/invoce/deleteById")
     public boolean deleteById(@RequestBody int invoceId) {
         return invoceDao.deleteById(invoceId);
     }
 
-    @PostMapping("/invoce/findById")
+    @PostMapping("/api/invoce/findById")
     public Optional<Invoce> findById(@RequestBody int invoceId) {
         return invoceDao.findById(invoceId);
     }
 
-    @GetMapping("/invoce/deleteAll")
+    @GetMapping("/api/invoce/deleteAll")
     public void deleteAll() {
         invoceDao.deleteAll();
     }

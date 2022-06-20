@@ -18,32 +18,32 @@ public class CategoryController {
     @Autowired
     private CategoryDao categoryDao;
 
-    @GetMapping("/category/get-all")
+    @GetMapping("/api/category/get-all")
     public List<Category> getAllCategorys() {
         return categoryDao.getAllCategorys();
     }
 
-    @PostMapping("/category/save")
+    @PostMapping("/api/category/save")
     public Category save(@RequestBody Category category) {
         return categoryDao.save(category);
     }
 
-    @GetMapping("/category/count")
+    @GetMapping("/api/category/count")
     public Long count() {
         return categoryDao.count();
     }
 
-    @PostMapping("/category/deleteById")
+    @PostMapping("/api/category/deleteById")
     public boolean deleteById(@RequestBody int categoryId) {
         return categoryDao.deleteById(categoryId);
     }
 
-    @PostMapping("/category/findById")
+    @PostMapping("/api/category/findById")
     public Optional<Category> findById(@RequestBody int categoryId) {
         return categoryDao.findById(categoryId);
     }
 
-    @GetMapping("/category/deleteAll")
+    @GetMapping("/api/category/deleteAll")
     public void deleteAll() {
         categoryDao.deleteAll();
     }

@@ -18,32 +18,32 @@ public class StorageController {
     @Autowired
     private StorageDao storageDao;
 
-    @GetMapping("/storage/get-all")
+    @GetMapping("/api/storage/get-all")
     public List<Storage> getAllStorages() {
         return storageDao.getAllStorages();
     }
 
-    @PostMapping("/storage/save")
+    @PostMapping("/api/storage/save")
     public Storage save(@RequestBody Storage storage) {
         return storageDao.save(storage);
     }
 
-    @GetMapping("/storage/count")
+    @GetMapping("/api/storage/count")
     public Long count() {
         return storageDao.count();
     }
 
-    @PostMapping("/storage/deleteById")
+    @PostMapping("/api/storage/deleteById")
     public boolean deleteById(@RequestBody int storageId) {
         return storageDao.deleteById(storageId);
     }
 
-    @PostMapping("/storage/findById")
+    @PostMapping("/api/storage/findById")
     public Optional<Storage> findById(@RequestBody int storageId) {
         return storageDao.findById(storageId);
     }
 
-    @GetMapping("/storage/deleteAll")
+    @GetMapping("/api/storage/deleteAll")
     public void deleteAll() {
         storageDao.deleteAll();
     }

@@ -1,5 +1,6 @@
 package ua.kaudeveloper.warehouse.models.good;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +18,14 @@ public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Getter
     @Setter
     private Integer id;
+    @Getter
+    @Setter
+    @OneToOne(fetch = FetchType.LAZY)
+    private Good parent;
     @Getter
     @Setter
     private String name;

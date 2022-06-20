@@ -18,32 +18,32 @@ public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
 
-    @GetMapping("/employee/get-all")
+    @GetMapping("/api/api/employee/get-all")
     public List<Employee> getAllEmployees() {
         return employeeDao.getAllEmployees();
     }
 
-    @PostMapping("/employee/save")
+    @PostMapping("/api/api/employee/save")
     public Employee save(@RequestBody Employee employee) {
         return employeeDao.save(employee);
     }
 
-    @GetMapping("/employee/count")
+    @GetMapping("/api/api/employee/count")
     public Long count() {
         return employeeDao.count();
     }
 
-    @PostMapping("/employee/deleteById")
+    @PostMapping("/api/api/employee/deleteById")
     public boolean deleteById(@RequestBody int employeeId) {
         return employeeDao.deleteById(employeeId);
     }
 
-    @PostMapping("/employee/findById")
+    @PostMapping("/api/api/employee/findById")
     public Optional<Employee> findById(@RequestBody int employeeId) {
         return employeeDao.findById(employeeId);
     }
 
-    @GetMapping("/employee/deleteAll")
+    @GetMapping("/api/api/employee/deleteAll")
     public void deleteAll() {
         employeeDao.deleteAll();
     }

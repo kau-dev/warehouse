@@ -1,17 +1,16 @@
 package ua.kaudeveloper.warehouse.controllers.rest;
 
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import ua.kaudeveloper.warehouse.models.good.Good;
 import ua.kaudeveloper.warehouse.models.good.GoodDao;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 @ToString
 @RestController
 public class GoodController {
@@ -19,32 +18,38 @@ public class GoodController {
     @Autowired
     private GoodDao goodDao;
 
-    @GetMapping("/good/get-all")
+    @GetMapping("/api/good/get-all")
+    @ResponseStatus(HttpStatus.CREATED)
     public List<Good> getAllGoods() {
         return goodDao.getAllGoods();
     }
 
-    @PostMapping("/good/save")
+    @PostMapping("/api/good/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Good save(@RequestBody Good good) {
         return goodDao.save(good);
     }
 
-    @GetMapping("/good/count")
+    @GetMapping("/api/good/count")
+    @ResponseStatus(HttpStatus.CREATED)
     public Long count() {
         return goodDao.count();
     }
 
-    @PostMapping("/good/deleteById")
-    public boolean deleteById(@RequestBody Integer id) {
-        return goodDao.deleteById(id);
+    @PostMapping("/api/good/deleteById")
+    @ResponseStatus(HttpStatus.CREATED)
+    public boolean deleteById(@RequestBody Good good) {
+        return goodDao.deleteById(good.getId());
     }
 
-    @PostMapping("/good/findById")
-    public Optional<Good> findById(@RequestBody Integer id) {
-        return goodDao.findById(id);
+    @PostMapping("/api/good/findById")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Optional<Good> findById(@RequestBody  Good good) {
+        System.out.println("request id ="+good.getId());
+        return goodDao.findById(good.getId());
     }
 
-    @GetMapping("/good/deleteAll")
+    @GetMapping("/api/good/deleteAll")
     public void deleteAll() {
         goodDao.deleteAll();
     }

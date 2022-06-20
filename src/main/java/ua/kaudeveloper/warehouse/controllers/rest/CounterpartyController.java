@@ -18,32 +18,32 @@ public class CounterpartyController {
     @Autowired
     private CounterpartyDao counterpartyDao;
 
-    @GetMapping("/counterparty/get-all")
+    @GetMapping("/api/counterparty/get-all")
     public List<Counterparty> getAllCounterparties() {
         return counterpartyDao.getAllCounterparties();
     }
 
-    @PostMapping("/counterparty/save")
+    @PostMapping("/api/counterparty/save")
     public Counterparty save(@RequestBody Counterparty counterparty) {
         return counterpartyDao.save(counterparty);
     }
 
-    @GetMapping("/counterparty/count")
+    @GetMapping("/api/counterparty/count")
     public Long count() {
         return counterpartyDao.count();
     }
 
-    @PostMapping("/counterparty/deleteById")
+    @PostMapping("/api/counterparty/deleteById")
     public boolean deleteById(@RequestBody int counterpartyId) {
         return counterpartyDao.deleteById(counterpartyId);
     }
 
-    @PostMapping("/counterparty/findById")
+    @PostMapping("/api/counterparty/findById")
     public Optional<Counterparty> findById(@RequestBody int counterpartyId) {
         return counterpartyDao.findById(counterpartyId);
     }
 
-    @GetMapping("/counterparty/deleteAll")
+    @GetMapping("/api/counterparty/deleteAll")
     public void deleteAll() {
         counterpartyDao.deleteAll();
     }
