@@ -29,28 +29,33 @@ public class GoodWebCtrl {
 //        return "redirect:/books";
 //    }
 
-   // @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    // @RequestMapping(value = "/welcome", method = RequestMethod.GET)
 
-   @RequestMapping(value={"/", "/welcome","/goods"}, method = RequestMethod.GET)
-    public String listGood(Model model){
+    @RequestMapping(value = {"/welcome", "/goods"}, method = RequestMethod.GET)
+    public String listGood(Model model) {
         model.addAttribute("good", new Good());
         model.addAttribute("listGoods", this.goodDao.getAllGoods());
         return "goods";
     }
-//    @GetMapping({"/", "/welcome"})
+
+    //    @GetMapping({"/", "/welcome"})
 //    public String welcome(Model model) {
 //        model.addAttribute("listGoods");
 //        return "welcome";
 //    }
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String rootpage() {
+        return "redirect:/index.jsp";
+    }
 
     @RequestMapping("/gooddata/{id}")
-    public String goodData(@PathVariable("id") Integer id, Model model){
+    public String goodData(@PathVariable("id") Integer id, Model model) {
         Optional<Good> getGood = this.goodDao.findById(id);
-        if(getGood.isPresent()) {
+        if (getGood.isPresent()) {
             model.addAttribute("good", getGood.get());
 
 
-        return "gooddata";
+            return "gooddata";
         }
         return "redirect:/goods";
     }

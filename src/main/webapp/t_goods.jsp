@@ -11,6 +11,7 @@
     <meta charset="utf-8">
     <title>goods jsp</title>
     <link href="${contextPath}/resources/css/bootstrap.css" rel="stylesheet">
+
     <style>
         body {
             position: relative;
@@ -27,7 +28,8 @@
 <%--<body>--%>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 <%--<a href="../../index.jsp">Back to main menu</a>--%>
-
+<%--<spring:message code="NotEmpty"/>--%>
+<spring:message code="NotEmpty"/>
 <div class="container-fluid">
     <div class="row">
         <nav class="col-sm-3 col-4" id="myScrollspy">

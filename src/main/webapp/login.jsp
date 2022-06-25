@@ -10,13 +10,13 @@
   <head>
       <meta charset="utf-8">
       <title>Log in with your account</title>
-
-      <link href="${contextPath}/resources/css/bootstrap.css" rel="stylesheet">
+      <link rel="stylesheet" href="${contextPath}/resources/bootstrap/css/bootstrap.min.css">
+          <link rel="stylesheet" href="${contextPath}/resources/css/custom.css">
   </head>
 
   <body>
 
-    <div class="container">
+    <div class="  center-block">
       <form method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading">Log in</h2>
 
@@ -34,7 +34,7 @@
       </form>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="${contextPath}/resources/js/bootstrap.js"></script>
+    <script src="${contextPath}/resources/js/jquery.min.js"></script>
+    <script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

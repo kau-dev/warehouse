@@ -27,6 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 @Override
 protected void configure(HttpSecurity http) throws Exception
 {
+
+
+
     //basic auth for REST api by base64 enc. in header request Authorization: Basic <your encode user:pass>
     http
             .csrf().disable()
@@ -37,20 +40,25 @@ protected void configure(HttpSecurity http) throws Exception
             .antMatchers(HttpMethod.POST,"/api/**").authenticated()
             .and()
             .logout();
-    //other pages
 
+    //other pages
     http
+
             .authorizeRequests()
-            .antMatchers("/","/resources/**").permitAll()
+            .antMatchers("/","/welcome","/registration","/resources/**").permitAll()
             .anyRequest().authenticated()
             .and()
+
             .formLogin()
             .loginPage("/login")
             .permitAll()
             .and()
             .logout()
             .permitAll();
-
+http
+        .headers()
+        .frameOptions()
+        .sameOrigin();
 
 }
     @Bean
@@ -62,13 +70,5 @@ protected void configure(HttpSecurity http) throws Exception
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
-//@Autowired
-//public void configureGlobal(AuthenticationManagerBuilder auth)
-//        throws Exception
-//{
-//    auth.inMemoryAuthentication()
-//            .withUser("admin")
-//            .password("password")
-//            .roles("USER");
-//}
+
 }
