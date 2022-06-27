@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html id="tasklist" style="overflow:scroll;">
+<html style="overflow:scroll;">
 
 <head>
     <meta charset="utf-8">
@@ -41,7 +41,7 @@
                 <div class="card shadow mycard-s" style="color: rgb(255,255,255);">
                     <ul id="myUL">
                         <li id="li1" class="list-group-item"
-                            style="background-color: rgb(99,99,99); display:inline-flexbox;"
+                            style="background-color: rgb(99,99,99); "
                             onclick="navOnClick(this.id)">
                             <div class="caret">
                                 <div class="catalogroup"></div>
@@ -58,7 +58,7 @@
                             </div>
                             <ul class="list-group list-group-flush nested">
                                 <li id="li2" class="list-group-item"
-                                    style="background-color: rgb(99,99,99); display:inline-flexbox;"
+                                    style="background-color: rgb(99,99,99); "
                                     onclick="navOnClick(this.id)">
                                     <div class="caret">
                                         <div class="catalogroup" style="margin-right:15px ;"></div>
@@ -78,7 +78,7 @@
                                     <ul class="list-group list-group-flush nested">
                                         <li id="li3" class="list-group-item caret"
                                             style="background-color: rgb(99,99,99);" onclick="navOnClick(this.id)">
-                                            <a href="good.jsp">
+                                            <a href="good.jsp?id=1">
                                                 <div class="noncatalogroup"></div>
                                                 <div class="row align-items-center no-gutters">
                                                     <div class="col mr-2">

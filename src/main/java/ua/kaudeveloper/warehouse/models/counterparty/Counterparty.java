@@ -8,7 +8,8 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.*;    
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -38,4 +39,8 @@ public class Counterparty {
 @Getter
 @Setter
  private long maincounterparty;
+    @Getter
+    @Setter
+    private Date creation_date;
+
 }

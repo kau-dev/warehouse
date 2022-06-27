@@ -23,7 +23,7 @@
     <div class="flex-column " id="content-wrapper" style="background-color: rgb(77,77,77);">
         <div id="content" style="color: rgb(77,77,77);">
             <div class="card mycard-s" id="content">
-                <div class="card-body d-inline " id="content">
+                <div class="card-body d-inline ">
                     <div class="col d-flex flex-column flex-shrink-1 flex-fill ">
                         <div class="row flex-column flex-sm-column flex-md-column flex-lg-column "
                             style="min-height: 300px;background-color: rgb(99,99,99);">

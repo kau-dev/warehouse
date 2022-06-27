@@ -23,20 +23,20 @@
 
     <!--            <div id="content" style="color: rgb(77,77,77);margin-left: -14px;">-->
     <div class="card mycard-s" id="content">
-        <div class="card-body col-10" id="content">
+        <div class="card-body col-10" >
             <div class="col d-flex flex-column flex-shrink-1 flex-fill" style="margin-left: -30px;margin-right: -30px;">
-                <div class="row flex-column flex-sm-column flex-md-column flex-lg-column"
+                <div class=" flex-column flex-sm-column flex-md-column flex-lg-column"
                     style="min-height: 300px;background-color: rgb(99,99,99);">
                     <div class="col" style="color: rgb(95,95,95);">
                         <div
-                            class="row d-flex flex-column mt-auto flex-sm-column flex-md-column flex-lg-column flex-xl-column">
+                            class=" d-flex flex-column mt-auto flex-sm-column flex-md-column flex-lg-column flex-xl-column">
                             <div class="col" style="height: 220px;width: 220px;max-height: 220px;max-width: 220px;"><img
                                     class="rounded" src="${contextPath}/resources/img/conterparty_logo.png"
                                     style="min-width: 200px;min-height: 200px;max-width: 200px;max-height: 200px;margin-top: 5px;"
                                     loading="lazy"></div>
 
                             <div class="col">
-                                <div class="row d-flex flex-column flex-xl-row">
+                                <div class=" d-flex flex-column flex-xl-row">
                                     <div class="col">
                                         <div class="input-group text-break inputText" id="fio">
                                             <div class="input-group-prepend text-monospace d-flex input-group-addon">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                <div class=" flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                     <div
                                         class="col flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
                                         <div class="input-group text-break inputText" id="position">
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="row d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                    class=" d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                     <div class="col" style="max-width: 350px;">
                                         <div class="input-group text-break inputText" id="tin">
                                             <div class="input-group-prepend text-monospace input-group-addon"><span
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                <div class=" flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                     <div class="col flex-row flex-sm-row flex-md-row flex-lg-row flex-xl-row">
                                         <div class="input-group text-break inputText" style="max-width: 700px;"
                                             id="passport_num">
@@ -154,7 +154,7 @@
 
             </div>
         </div>
-        <!--        </div>-->
+    </div>
 
 
 <script src="${contextPath}/resources/js/custom.js"></script>
@@ -164,7 +164,7 @@
 <script src="${contextPath}/resources/js/jquery.easing.js"></script>
 <script src="${contextPath}/resources/js/theme.js"></script>
 </body>
-<!-- Modal -->
+<!-- Modal -->gt
 <div align="center" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog col d-xl-flex justify-content-xl-center parent" role="document">
         <div class="modal-content parent">
@@ -174,6 +174,7 @@
         </div>
     </div>
 </div>
+
 <style>
     .parent {
         background-color: rgb(77, 77, 77);

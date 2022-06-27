@@ -21,8 +21,8 @@
 <body style="background-color: rgb(77,77,77);">
   <div class="flex-column" id="content-wrapper" style="background-color: rgb(77,77,77);">
     <div id="content" style="color: rgb(77,77,77);">
-      <div class="card mycard-s" id="content">
-        <div class="card-body d-inline" id="content">
+      <div class="card mycard-s">
+        <div class="card-body d-inline">
           <h3 class="dark-white">
             Поступление на склад № 53423 от 11.11.2002
             </h3>

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 
 import ua.kaudeveloper.warehouse.models.category.Category;
+import ua.kaudeveloper.warehouse.models.unit_measure.Unit_measure;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,7 +38,8 @@ public class Good {
     private String barcode;
     @Getter
     @Setter
-    private String units;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Unit_measure units;
     @Getter
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -106,11 +108,11 @@ public class Good {
         this.barcode = barcode;
     }
 
-    public String getUnits() {
+    public Unit_measure getUnits() {
         return units;
     }
 
-    public void setUnits(String units) {
+    public void setUnits(Unit_measure units) {
         this.units = units;
     }
 

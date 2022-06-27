@@ -9,69 +9,151 @@ import ua.kaudeveloper.warehouse.models.storage.Storage;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.*;    
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
 public class Employee {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Getter
-    @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Getter
-    @Setter
     private String name;
-    @Getter
-    @Setter
     private String position;
-    @Getter
-    @Setter
-    private int age;
-    @Getter
-    @Setter
+    private Date birth_day;
+    private Date employment_date; //принят на работу  - дата
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Storage storage;
+    private String tin;
+    private String social_num;
+    private String passport_ser;
+    private String passport_num;
+    private String passport_date;
+    private String passport_from;
+    private String country;
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getPosition() {
-        return position;
-    }
+  public String getPosition() {
+    return position;
+  }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
+  public void setPosition(String position) {
+    this.position = position;
+  }
 
-    public int getAge() {
-        return age;
-    }
+  public Date getBirth_day() {
+    return birth_day;
+  }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+  public void setBirth_day(Date birth_day) {
+    this.birth_day = birth_day;
+  }
 
-    public Storage getStorage() {
-        return storage;
-    }
+  public Date getEmployment_date() {
+    return employment_date;
+  }
 
-    public void setStorage(Storage storage) {
-        this.storage = storage;
-    }
+  public void setEmployment_date(Date employment_date) {
+    this.employment_date = employment_date;
+  }
+
+  public Storage getStorage() {
+    return storage;
+  }
+
+  public void setStorage(Storage storage) {
+    this.storage = storage;
+  }
+
+  public String getTin() {
+    return tin;
+  }
+
+  public void setTin(String tin) {
+    this.tin = tin;
+  }
+
+  public String getSocial_num() {
+    return social_num;
+  }
+
+  public void setSocial_num(String social_num) {
+    this.social_num = social_num;
+  }
+
+  public String getPassport_ser() {
+    return passport_ser;
+  }
+
+  public void setPassport_ser(String passport_ser) {
+    this.passport_ser = passport_ser;
+  }
+
+  public String getPassport_num() {
+    return passport_num;
+  }
+
+  public void setPassport_num(String passport_num) {
+    this.passport_num = passport_num;
+  }
+
+  public String getPassport_date() {
+    return passport_date;
+  }
+
+  public void setPassport_date(String passport_date) {
+    this.passport_date = passport_date;
+  }
+
+  public String getPassport_from() {
+    return passport_from;
+  }
+
+  public void setPassport_from(String passport_from) {
+    this.passport_from = passport_from;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  @Override
+  public String toString() {
+    return "Employee{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", position='" + position + '\'' +
+            ", birth_day=" + birth_day +
+            ", employment_date=" + employment_date +
+            ", storage=" + storage +
+            ", tin='" + tin + '\'' +
+            ", social_num='" + social_num + '\'' +
+            ", passport_ser='" + passport_ser + '\'' +
+            ", passport_num='" + passport_num + '\'' +
+            ", passport_date='" + passport_date + '\'' +
+            ", passport_from='" + passport_from + '\'' +
+            ", country='" + country + '\'' +
+            '}';
+  }
+
 }

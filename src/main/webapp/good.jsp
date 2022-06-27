@@ -21,14 +21,14 @@
 <body style="background-color: rgb(77,77,77);">
     <div class="flex-column " id="content-wrapper" style="background-color: rgb(77,77,77);">
         <div id="content" style="color: rgb(77,77,77);">
-            <div class="card mycard-s" id="content">
-                <div class="card-body d-inline" id="content">
+            <div class="card mycard-s" >
+                <div class="card-body d-inline" >
                     <div class="col d-flex flex-column flex-shrink-1 flex-fill myCardContainer">
-                        <div class="row flex-column flex-sm-column flex-md-column flex-lg-column"
+                        <div class=" flex-column flex-sm-column flex-md-column flex-lg-column"
                             style="min-height: 300px;background-color: rgb(99,99,99);">
                             <div class="col" style="color: rgb(95,95,95);">
                                 <div
-                                    class="row d-flex flex-column mt-auto flex-sm-column flex-md-column flex-lg-column flex-xl-column">
+                                    class=" d-flex flex-column mt-auto flex-sm-column flex-md-column flex-lg-column flex-xl-column">
                                     <div class="col"
                                         style="height: 220rem;width: 220rem;max-height: 220rem;max-width: 220rem;"><img
                                             class="rounded" src="resources/img/АИР.png"
@@ -36,7 +36,7 @@
                                             loading="lazy"></div>
                                     <div class="col"></div>
                                     <div class="col">
-                                        <div class="row d-flex flex-column flex-xl-row">
+                                        <div class=" d-flex flex-column flex-xl-row">
                                             <div class="col">
                                                 <div class="input-group text-break inputText" id="fio">
                                                     <div
@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                         <div
-                                            class="row flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
+                                            class=" flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row">
                                             <div
                                                 class="col flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
                                                 <div class="input-group text-break inputText" id="position">
@@ -93,7 +93,7 @@
                                         </div>
 
                                         <div
-                                            class="row d-flex flex-column flex-grow-1 flex-shrink-1 flex-fill justify-content-start align-items-start align-content-start flex-wrap flex-sm-column flex-md-column flex-lg-column flex-xl-row col-xs">
+                                            class=" d-flex flex-column flex-grow-1 flex-shrink-1 flex-fill justify-content-start align-items-start align-content-start flex-wrap flex-sm-column flex-md-column flex-lg-column flex-xl-row col-xs">
                                             <div class="col col-xs" style="max-width: 470px;">
                                                 <div class="input-group text-break inputText" id="passport_ser">
                                                     <div class="input-group-prepend text-monospace input-group-addon">
