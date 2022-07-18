@@ -1,10 +1,11 @@
 package ua.kaudeveloper.warehouse.models.counterparty;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
-import org.springframework.stereotype.Service;      
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,14 +25,14 @@ public class CounterpartyDao {
     return counterparties;
   }
 
-  public boolean deleteById(int counterpartyId) {
+  public boolean deleteById(Long counterpartyId) {
     repository.deleteById(counterpartyId);  
     return repository.existsById(counterpartyId);
   }  
   public void deleteAll() {
     repository.deleteAll();
   }
-  public Optional<Counterparty> findById(int counterpartyId){
+  public Optional<Counterparty> findById(Long counterpartyId){
     return repository.findById(counterpartyId);
   }
   public Long count(){

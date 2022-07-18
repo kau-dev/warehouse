@@ -9,13 +9,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Поступления на склад</title>
-    <link rel="stylesheet" href="${contextPath}/resources/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/custom.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="${contextPath}/resources/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="${contextPath}/resources/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="${contextPath}/resources/fonts/fontawesome5-overrides.min.css">
+<%--    <link rel="stylesheet" href="${contextPath}/resources/bootstrap/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/css/custom.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/css/Navigation-with-Button.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/css/Navigation-with-Button.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/fonts/fontawesome-all.min.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/fonts/font-awesome.min.css">--%>
+<%--    <link rel="stylesheet" href="${contextPath}/resources/fonts/fontawesome5-overrides.min.css">--%>
 </head>
 
 <body id="tasklist1" style="background-color: rgb(77,77,77);">
@@ -39,7 +39,7 @@
                     <ul class="list-group list-group-flush">
 
                         <li class="list-group-item border-left-info-normal" style="background-color: rgb(99,99,99);">
-                            <a href="supplyInvoice.jsp">
+                            <a href="#" onclick="navOnClick('','/supplyInvoice.jsp?id=1')">
                                 <div class="row align-items-center no-gutters">
                                     <div class="col mr-2">
                                         <h6 class="mb-0"><strong>Поступление на склад 241 от 12.03.2022</strong></h6>
@@ -82,12 +82,12 @@
             </div>
         </div>
     </div>
-<script src="${contextPath}/resources/js/custom.js"></script>
-<script src="${contextPath}/resources/js/jquery.min.js"></script>
-<script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
-<script src="${contextPath}/resources/js/bs-init.js"></script>
-<script src="${contextPath}/resources/js/jquery.easing.js"></script>
-<script src="${contextPath}/resources/js/theme.js"></script>
+<%--<script src="${contextPath}/resources/js/custom.js"></script>--%>
+<%--<script src="${contextPath}/resources/js/jquery.min.js"></script>--%>
+<%--<script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>--%>
+<%--<script src="${contextPath}/resources/js/bs-init.js"></script>--%>
+<%--<script src="${contextPath}/resources/js/jquery.easing.js"></script>--%>
+<%--<script src="${contextPath}/resources/js/theme.js"></script>--%>
 </body>
 
 </html>

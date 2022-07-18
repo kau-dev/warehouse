@@ -188,15 +188,15 @@
     }
 </style>
 <script>
-    let myIframe = document.getElementById("myIframe");
-    let url_string = "goodsList.html";
-    let width = "400";
-    let height = "200";
-    let geo = "ua";
-
-    let adsURL = url_string + "?geo=" + geo + "&size=" + width + "x" + height;
-    console.log(adsURL);
-    myIframe.src = adsURL;
+    // let myIframe = document.getElementById("myIframe");
+    // let url_string = "goodsList.html";
+    // let width = "400";
+    // let height = "200";
+    // let geo = "ua";
+    //
+    // let adsURL = url_string + "?geo=" + geo + "&size=" + width + "x" + height;
+    // console.log(adsURL);
+    // myIframe.src = adsURL;
 </script>
 
 </html>

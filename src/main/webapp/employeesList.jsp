@@ -69,7 +69,7 @@
                             </div>
                             <div class="table-responsive text-monospace text-white d-flex flex-column flex-grow-1 table-sm"
                                 id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <table class="table dataTable my-0" id="dataTable">
+                                <table class="table dataTable my-0">
                                     <thead>
                                         <tr class="table td">
                                             <th>ФИО<i class="fa fa-sort-alpha-asc startdate_sort"

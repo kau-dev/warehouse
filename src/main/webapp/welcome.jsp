@@ -16,6 +16,7 @@
 </head>
 
 <body id="tasklist1" style="background-color: rgb(77,77,77);">
+<div w3-include-html="/index.jsp"></div>
 <div class="container-fluid card shadow mycard-s">
     <div class="row">
         <div class="col d-xl-flex justify-content-xl-center align-items-xl-start"><span
@@ -33,6 +34,7 @@
 <script src="${contextPath}/resources/js/bs-init.js"></script>
 <script src="${contextPath}/resources/js/jquery.easing.js"></script>
 <script src="${contextPath}/resources/js/theme.js"></script>
+
 </body>
 
 </html>

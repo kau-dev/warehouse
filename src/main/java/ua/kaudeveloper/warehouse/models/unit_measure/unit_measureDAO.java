@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class Unit_measureDAO {
+public class Unit_measureDao {
     @Autowired
     private Unit_measureRepository repository;
 

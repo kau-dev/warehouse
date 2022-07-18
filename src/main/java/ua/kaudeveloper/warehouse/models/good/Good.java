@@ -1,86 +1,39 @@
 package ua.kaudeveloper.warehouse.models.good;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
 
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.ToString;
 import ua.kaudeveloper.warehouse.models.category.Category;
 import ua.kaudeveloper.warehouse.models.unit_measure.Unit_measure;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
+@ToString
+@JsonSerialize(using= CustomGoodSerializer.class)
 public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    @Getter
-    @Setter
-    private Integer id;
-    @Getter
-    @Setter
-    @OneToOne(fetch = FetchType.LAZY)
+    private Long id;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Good parent;
-    @Getter
-    @Setter
     private String name;
-    @Getter
-    @Setter
+    private String label_name;
     private String code;
-    @Getter
-    @Setter
     private String barcode;
-    @Getter
-    @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Unit_measure units;
-    @Getter
-    @Setter
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Category category;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Unit_measure units_m;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private  Category category;
+    private  boolean this_group = false;
+    private String external_code;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, code, barcode, units, category);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Good obj__ = (Good) o;
-        return Objects.equals(id, obj__.id) &&
-                Objects.equals(name, obj__.name) &&
-                Objects.equals(code, obj__.code) &&
-                Objects.equals(barcode, obj__.barcode) &&
-                Objects.equals(units, obj__.units) &&
-                Objects.equals(category, obj__.category);
-
-    }
-
-  //  @Override
-    public String toStringJson() {
-        return "{" +
-                "\"id\":" + id + "," +
-                "\"name\":" + name + "," +
-                "\"code\":" + code + "," +
-                "\"barcode\":" + barcode + "," +
-                "\"units\":" + units + "," +
-                "\"category\":" + category + ""
-                + "}";
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -96,6 +49,14 @@ public class Good {
         return code;
     }
 
+    public String getLabel_name() {
+        return label_name;
+    }
+
+    public void setLabel_name(String label_name) {
+        this.label_name = label_name;
+    }
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -108,14 +69,6 @@ public class Good {
         this.barcode = barcode;
     }
 
-    public Unit_measure getUnits() {
-        return units;
-    }
-
-    public void setUnits(Unit_measure units) {
-        this.units = units;
-    }
-
     public Category getCategory() {
         return category;
     }
@@ -124,16 +77,52 @@ public class Good {
         this.category = category;
     }
 
+    public Good getParent() {
+        return parent;
+    }
+
+    public void setParent(Good parent) {
+        this.parent = parent;
+    }
+
+    public Unit_measure getUnits_m() {
+        return units_m;
+    }
+
+    public void setUnits_m(Unit_measure units_m) {
+        this.units_m = units_m;
+    }
+
+    public boolean isThis_group() {
+        return this_group;
+    }
+
+    public void setThis_group(boolean this_group) {
+        this.this_group = this_group;
+    }
+
+    public String getExternal_code() {
+        return external_code;
+    }
+
+    public void setExternal_code(String external_code) {
+        this.external_code = external_code;
+    }
+
     @Override
     public String toString() {
         return "Good{" +
-                "id=" + id + "," +
-                "name='" + name + "'," +
-                "code='" + code + "'," +
-                "barcode='" + barcode + "'," +
-                "units='" + units + "'," +
-                "category='" + category + "'"
-                + "}";
+                "id=" + id +
+                ", parent=" + parent +
+                ", name='" + name + '\'' +
+                ", label_name='" + label_name + '\'' +
+                ", code='" + code + '\'' +
+                ", barcode='" + barcode + '\'' +
+                ", units_m=" + units_m +
+                ", category=" + category +
+                ", this_group=" + this_group +
+                ", external_code='" + external_code + '\'' +
+                '}';
     }
 
 }

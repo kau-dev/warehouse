@@ -39,9 +39,8 @@
         <div class="row">
             <div class="col">
                 <div class="card shadow mycard-s" style="color: rgb(255,255,255);">
-                    <ul id="myUL">
+                    <ul id="myUL" class="my_work_container">
                         <li id="li1" class="list-group-item"
-                            style="background-color: rgb(99,99,99); "
                             onclick="navOnClick(this.id)">
                             <div class="caret">
                                 <div class="catalogroup"></div>
@@ -58,7 +57,6 @@
                             </div>
                             <ul class="list-group list-group-flush nested">
                                 <li id="li2" class="list-group-item"
-                                    style="background-color: rgb(99,99,99); "
                                     onclick="navOnClick(this.id)">
                                     <div class="caret">
                                         <div class="catalogroup" style="margin-right:15px ;"></div>
@@ -77,8 +75,8 @@
                                     </div>
                                     <ul class="list-group list-group-flush nested">
                                         <li id="li3" class="list-group-item caret"
-                                            style="background-color: rgb(99,99,99);" onclick="navOnClick(this.id)">
-                                            <a href="good.jsp?id=1">
+                                            style="background-color: rgb(99,99,99);" >
+                                            <a onclick="navOnClick('','/good.jsp?id=1')">
                                                 <div class="noncatalogroup"></div>
                                                 <div class="row align-items-center no-gutters">
                                                     <div class="col mr-2">
@@ -111,6 +109,26 @@
                 this.classList.toggle("caret-down");
             });
         }
+
+        function reloadTreeGoods(treeId){
+            $.getJSON(url, function (result) {
+                $("#" + treeId).empty();
+                $.each(result, function (i, field) {
+                    var a = document.createElement("a");
+                    a.value = '(' + field.id + ') ' + field.name;
+                    a.setAttribute("id", treeId + "_item" + i);
+                    a.setAttribute('data-item-id', field.id);
+                    a.setAttribute("class", "dropdown-item searchable")
+                    a.setAttribute("href", "#");
+                    a.setAttribute('onclick', "setComboBox_SelectValue('dropDownTextSpan',this.id)");
+
+                    a.innerHTML = "(" + field.id + ") " + field.name;
+                    $("#" + treeId).append(a);
+                });
+            });
+        }
+
+     //   reloadTreeGoods("myUL");
     </script>
 <script src="${contextPath}/resources/js/custom.js"></script>
 <script src="${contextPath}/resources/js/jquery.min.js"></script>

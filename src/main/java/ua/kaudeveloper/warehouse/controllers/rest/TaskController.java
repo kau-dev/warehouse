@@ -3,7 +3,6 @@ package ua.kaudeveloper.warehouse.controllers.rest;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ua.kaudeveloper.warehouse.models.task.Task;
 import ua.kaudeveloper.warehouse.models.task.TaskDao;
@@ -39,14 +38,14 @@ public class TaskController {
     @PostMapping("/api/task/deleteById")
     @ResponseStatus(HttpStatus.CREATED)
     public boolean deleteById(@RequestBody Task task) {
-        return taskDao.deleteById(task.getId());
+        return taskDao.deleteById(task.getId().intValue());
     }
 
     @PostMapping("/api/task/findById")
     @ResponseStatus(HttpStatus.CREATED)
     public Optional<Task> findById(@RequestBody  Task task) {
         System.out.println("request id ="+task.getId());
-        return taskDao.findById(task.getId());
+        return taskDao.findById(task.getId().intValue());
     }
 
     @GetMapping("/api/task/deleteAll")

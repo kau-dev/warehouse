@@ -14,19 +14,19 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer id;
+    private Long id;
     @Getter
     @Setter
     private Integer typeOfTask;
     @Getter
     @Setter
-    private  Integer taskIdFormtype;
+    private Integer taskIdFormtype;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -45,8 +45,6 @@ public class Task {
     public void setTaskIdFormtype(Integer taskIdFormtype) {
         this.taskIdFormtype = taskIdFormtype;
     }
-
-
 
 
 }

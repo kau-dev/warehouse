@@ -26,6 +26,7 @@
     <td>${good.code}</td>
     <td>${good.barcode}</td>
   </tr>
+  <c:out value="${good.name}" />
 </table>
 </body>
 </html>

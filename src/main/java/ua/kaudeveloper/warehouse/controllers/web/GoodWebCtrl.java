@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import ua.kaudeveloper.warehouse.models.good.Good;
 import ua.kaudeveloper.warehouse.models.good.GoodDao;
 
@@ -16,6 +17,7 @@ public class GoodWebCtrl {
     @Autowired
     private GoodDao goodDao;
 
+    //TODO!!!!!!!
     @Autowired(required = true)
     @Qualifier(value = "goodDao")
     public void setgoodDao(GoodDao goodDao) {
@@ -31,11 +33,15 @@ public class GoodWebCtrl {
 
     // @RequestMapping(value = "/welcome", method = RequestMethod.GET)
 
-    @RequestMapping(value = {"/welcome", "/goods"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/welcome", "/t_goods","/t_gooddata"}, method = RequestMethod.GET)
     public String listGood(Model model) {
-        model.addAttribute("good", new Good());
-        model.addAttribute("listGoods", this.goodDao.getAllGoods());
-        return "goods";
+    //    model.addAttribute("good", this.goodDao.findById(123l).get());
+
+        int pageNo=0;
+        int pageSize =1000;
+        String sortBy="id";
+        model.addAttribute("listGoods", this.goodDao.getAllGoods(pageNo,pageSize,sortBy));
+        return "/t_goods.jsp";
     }
 
     //    @GetMapping({"/", "/welcome"})
@@ -48,15 +54,17 @@ public class GoodWebCtrl {
         return "redirect:/index.jsp";
     }
 
-    @RequestMapping("/gooddata/{id}")
-    public String goodData(@PathVariable("id") Integer id, Model model) {
+    @RequestMapping("/t_gooddata/{id}")
+    public String goodData(@PathVariable("id") Long id, Model model) {
         Optional<Good> getGood = this.goodDao.findById(id);
         if (getGood.isPresent()) {
             model.addAttribute("good", getGood.get());
 
 
-            return "gooddata";
+            return "t_gooddata";
         }
-        return "redirect:/goods";
+        return "redirect:/gooddata";
     }
+
+
 }

@@ -1,7 +1,10 @@
 package ua.kaudeveloper.warehouse.models.good;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Streamable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -60,14 +63,93 @@ public class GoodDao {
     }
 
 
-    public List<Good> getAllGoods() {
-        List<Good> goods = new ArrayList<>();
-        Streamable.of(repository.findAll())
-                .forEach(goods::add);
-        return goods;
+    public List<Good> getAllGoods(Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+
+        Page<Good> pagedResult = repository.findAll(paging);
+
+        if (pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
     }
 
-    public boolean deleteById(Integer goodId) {
+    public List<Good> getAllChildGoods(Long parentId, Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+
+        Page<Good> pagedResult = repository.getAllChildItems(parentId, paging);
+
+        if (pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
+    }
+
+
+    public List<Good> getRootChilds(Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+
+        Page<Good> pagedResult = repository.getRootChilds(paging);
+
+        if (pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
+    }
+
+    public List<Good> getAllGoods(boolean groups, Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+
+        Page<Good> pagedResult = repository.getAllItems(groups, paging);
+
+        if (pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
+    }
+
+    public List<Good> getAllGoods(boolean groups, String name, Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+
+        Page<Good> pagedResult = repository.getAllItems(groups, name, paging);
+
+        if (pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
+    }
+
+    public List<Good> getAllItemsGoods(String name, String barcode, String code, String extcode, Integer pageNo, Integer pageSize, String sortBy) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+        Page<Good> pagedResult = null;
+        if (name.length() > 0) {
+            pagedResult = repository.getAllItemsByExtCode(name, paging);
+        }
+        if (barcode.length() > 0) {
+            pagedResult = repository.getAllItemsByBarCode(barcode, paging);
+        }
+        if (code.length() > 0) {
+            pagedResult = repository.getAllItemsByCode(code, paging);
+        }
+        if (extcode.length() > 0) {
+            pagedResult = repository.getAllItemsByExtCode(extcode, paging);
+        }
+
+
+        if (pagedResult != null & pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<Good>();
+        }
+    }
+
+
+    public boolean deleteById(Long goodId) {
         repository.deleteById(goodId);
         return repository.existsById(goodId);
     }
@@ -76,8 +158,8 @@ public class GoodDao {
         repository.deleteAll();
     }
 
-    public Optional<Good> findById(Integer goodId) {
-        return repository.findById(goodId.intValue());
+    public Optional<Good> findById(Long goodId) {
+        return repository.findById(goodId);
     }
 
     public Long count() {

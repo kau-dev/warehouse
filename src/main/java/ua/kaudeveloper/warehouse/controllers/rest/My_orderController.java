@@ -1,16 +1,15 @@
 package ua.kaudeveloper.warehouse.controllers.rest;
 
-import ua.kaudeveloper.warehouse.models.my_order.My_order;
-import ua.kaudeveloper.warehouse.models.my_order.My_orderDao;
-
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import ua.kaudeveloper.warehouse.models.my_order.My_order;
+import ua.kaudeveloper.warehouse.models.my_order.My_orderDao;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class My_orderController {
@@ -34,12 +33,12 @@ public class My_orderController {
     }
 
     @PostMapping("/api/my_order/deleteById")
-    public boolean deleteById(@RequestBody int my_orderId) {
+    public boolean deleteById(@RequestBody Long my_orderId) {
         return my_orderDao.deleteById(my_orderId);
     }
 
     @PostMapping("/api/my_order/findById")
-    public Optional<My_order> findById(@RequestBody int my_orderId) {
+    public Optional<My_order> findById(@RequestBody Long my_orderId) {
         return my_orderDao.findById(my_orderId);
     }
 

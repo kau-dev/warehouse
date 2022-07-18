@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/fonts/fontawesome5-overrides.min.css">
 </head>
 
-<body id="page-top" style="background-color: rgb(123,123,123);"  onload="getLastActivePage('contentPage')">
+<body id="page-top" style="background-color: rgb(123,123,123);" onload="getLastActivePage('contentPage')">
 <div class="border-dark shadow-lg d-flex d-xl-flex justify-content-center justify-content-xl-center" id="wrapper"
      style="background-color: rgb(77,77,77);">
     <nav
@@ -26,7 +26,7 @@
         <div class="container-fluid d-flex flex-column p-0 ">
             <a id="tasksList"
                class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-11 nav-link active "
-               onclick="navOnClick(this.id)" href="#">
+               onclick="navOnClick(this.id,'/tasksList.jsp')" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"></div>
                 <div class="sidebar-brand-text mx-0"></div>
                 <img
@@ -36,52 +36,52 @@
             <ul class="nav navbar-nav text-white flex-fill align-self-end flex-wrap-reverse my_left_m30px"
                 id="accordionSidebar" style="opacity: 9;font-size: 12px;">
                 <li id="linkList" class="nav-item " role="presentation">
-                    <a id="goodsList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="goodsList" class="nav-link active" onclick="navOnClick(this.id,'/goodsList.jsp')" href="#"><img
                             class="rounded d-inline-flex img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;opacity: 1;/*filter: blur(0px) hue-rotate(0deg) saturate(100%) sepia(0%);*/background-size: contain;background-repeat: no-repeat;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-handle-with-care.png" loading="auto">
                         <span>Товары</span></a>
-                    <a id="supplyList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="supplyList" class="nav-link active" onclick="navOnClick(this.id,'/supplyList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-size: contain;background-repeat: no-repeat;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-delivery.png">
                         <span>Поступление на склад</span></a>
-                    <a id="offloadList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="offloadList" class="nav-link active" onclick="navOnClick(this.id,'/offloadList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-repeat: no-repeat;background-size: contain;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-buy.png">
                         <span>Расход со склада</span></a>
-                    <a id="movementsList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="movementsList" class="nav-link active" onclick="navOnClick(this.id,'/movementsList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-size: contain;background-repeat: round;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-grid-view.png">
                         <span>Внутренее перемещение</span></a>
-                    <a id="earmarkedList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="earmarkedList" class="nav-link active" onclick="navOnClick(this.id,'/earmarkedList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-repeat: no-repeat;background-size: contain;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-data-pending.png">
                         <span>Резервирование</span></a>
-                    <a id="counterpartiesList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="counterpartiesList" class="nav-link active" onclick="navOnClick(this.id,'/counterpartiesList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-repeat: no-repeat;background-size: contain;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-permanent-job.png">
                         <span>Контрагенты</span></a>
-                    <a id="employeesList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="employeesList" class="nav-link active" onclick="navOnClick(this.id,'/employeesList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-repeat: no-repeat;background-size: contain;padding: 0;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-supplier.png">
                         <span>Сотрудники</span></a>
-                    <a id="placementsList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="placementsList" class="nav-link active" onclick="navOnClick(this.id,'/placementsList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail"
                             style="width: 32px;height: 32px;background-size: contain;background-repeat: no-repeat;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-select-column.png">
                         <span>Места хранения</span></a>
-                    <a id="reportsList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="reportsList" class="nav-link active" onclick="navOnClick(this.id,'/reportsList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail mw-100"
                             style="width: 32px;height: 32px;background-size: contain;background-repeat: no-repeat;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-increase.png">
                         <span>Отчеты</span></a>
-                    <a id="settingsList" class="nav-link active" onclick="navOnClick(this.id)" href="#"><img
+                    <a id="settingsList" class="nav-link active" onclick="navOnClick(this.id,'/settingsList.jsp')" href="#"><img
                             class="img img-profile border-0 img-thumbnail mw-100"
                             style="width: 32px;height: 32px;background-size: contain;background-repeat: no-repeat;padding: 0;padding-top: 0;background-color: rgb(99,99,99);"
                             src="${contextPath}/resources/img/icons8-administrative-tools.png">
@@ -258,10 +258,11 @@
             </nav>
 
             <!-- Тут будет iframe -->
-
-            <iframe id="contentPage" class="iframe_child" width="100%" onchange="setLastActivePage(this.src);"
-                    height="100%"
-                    frameborder="0" scrollin="no" style="border:none;overflow:hidden;"></iframe>
+            <%--            <jsp:include page="${contextPath}/counterpartiesList.jsp" />--%>
+            <%--            <iframe id="contentPage" class="iframe_child" width="100%" onchange="setLastActivePage(this.src);"--%>
+            <%--                    height="100%"--%>
+            <%--                    frameborder="0" scrollin="no" style="border:none;overflow:hidden;"></iframe>--%>
+            <div id="contentPage"></div>
 
         </div>
         <footer class="sticky-footer" style="color: #4d4d4d;">
@@ -272,35 +273,17 @@
         </footer>
     </div>
 </div>
-<script src="${contextPath}/resources/js/custom.js"></script>
+
 <script src="${contextPath}/resources/js/jquery.min.js"></script>
 <script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/bs-init.js"></script>
 <script src="${contextPath}/resources/js/jquery.easing.js"></script>
 <script src="${contextPath}/resources/js/theme.js"></script>
+<script src="${contextPath}/resources/js/custom.js"></script>
 <script>
-    function navOnClick(id) {
-
-        document.getElementById("linkList").childNodes.forEach(function (item) {
-            if (item !== null && item !== undefined) {
-                if (item.style !== null && item.style !== undefined) {
-                    item.style.color = 'white';
-                }
-            }
-        });
-
-        document.getElementById(id).style.color = 'yellow';
-        document.getElementById("contentPage").src = '${contextPath}/' + id + ".jsp";
-         setLastActivePage(document.getElementById("contentPage").src);
-    }
-
-
-
     onLoadIndexPageSteNavState();
-
-
-
 </script>
+
 
 </body>
 

@@ -1,10 +1,11 @@
 package ua.kaudeveloper.warehouse.models.my_order;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
-import org.springframework.stereotype.Service;      
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,14 +25,14 @@ public class My_orderDao {
     return my_orders;
   }
 
-  public boolean deleteById(int my_orderId) {
+  public boolean deleteById(Long my_orderId) {
     repository.deleteById(my_orderId);  
     return repository.existsById(my_orderId);
   }  
   public void deleteAll() {
     repository.deleteAll();
   }
-  public Optional<My_order> findById(int my_orderId){
+  public Optional<My_order> findById(Long my_orderId){
     return repository.findById(my_orderId);
   }
   public Long count(){

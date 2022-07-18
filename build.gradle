@@ -1,6 +1,6 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.10'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
 
@@ -22,8 +22,11 @@ dependencies {
     implementation 'org.springframework.security:spring-security-web'
     implementation 'org.springframework.security:spring-security-config'
 
+    implementation 'org.projectlombok:lombok:1.18.18'
     implementation 'javax.servlet:jstl'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+//    implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
+
 
 //	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -31,16 +34,18 @@ dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-web'
 //	implementation 'com.vaadin:vaadin-spring-boot-starter'
 //	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-    implementation 'org.projectlombok:lombok:1.18.18'
+
     //  implementation group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
 
+  //  implementation 'org.hibernate:hibernate-core:5.2.2.Final'
 
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.3'
+    implementation 'junit:junit:4.12'
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+ //   implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
 
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
 //	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
