@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import ua.kaudeveloper.warehouse.models.good.Good;
-import ua.kaudeveloper.warehouse.models.invoce.Invoice;
+import ua.kaudeveloper.warehouse.models.invoice.Invoice;
 
 import javax.persistence.*;
 

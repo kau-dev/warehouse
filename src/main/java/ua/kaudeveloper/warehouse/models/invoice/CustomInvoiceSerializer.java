@@ -1,4 +1,4 @@
-package ua.kaudeveloper.warehouse.models.invoce;
+package ua.kaudeveloper.warehouse.models.invoice;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;

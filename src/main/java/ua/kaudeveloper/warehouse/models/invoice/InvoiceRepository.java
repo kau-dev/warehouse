@@ -1,4 +1,4 @@
-package ua.kaudeveloper.warehouse.models.invoce;
+package ua.kaudeveloper.warehouse.models.invoice;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

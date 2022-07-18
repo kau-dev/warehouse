@@ -1,4 +1,4 @@
-package ua.kaudeveloper.warehouse.models.invoce;
+package ua.kaudeveloper.warehouse.models.invoice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;

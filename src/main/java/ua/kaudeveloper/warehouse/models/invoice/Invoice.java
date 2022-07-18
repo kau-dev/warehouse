@@ -1,4 +1,4 @@
-package ua.kaudeveloper.warehouse.models.invoce;
+package ua.kaudeveloper.warehouse.models.invoice;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

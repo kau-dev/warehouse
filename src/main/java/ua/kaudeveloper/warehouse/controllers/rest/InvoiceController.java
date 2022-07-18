@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ua.kaudeveloper.warehouse.models.invoce.Invoice;
-import ua.kaudeveloper.warehouse.models.invoce.InvoiceDao;
+import ua.kaudeveloper.warehouse.models.invoice.Invoice;
+import ua.kaudeveloper.warehouse.models.invoice.InvoiceDao;
 
 import java.util.List;
 import java.util.Optional;
